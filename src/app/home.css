@@ -1,0 +1,40 @@
+@keyframes logoAnimation{
+    from{font-size: 10em; text-shadow: 2px 2px 50px cyan}
+    to{font-size: 5em; ;
+    }
+}
+@keyframes objectiveAnimation{
+    from{color: transparent;}
+    to{color: white;}
+}
+div#homeCont{
+    margin-top: 20vh;
+}
+h1#logo{
+    color: #000;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    text-shadow: 2px 2px 20px #fff;
+    font-size: 5em;
+    animation-name: logoAnimation;
+    animation-duration: 4s;
+}
+
+
+h1:hover{
+    
+    text-shadow: 2px 2px 50px cyan;
+}
+
+h1.clicked{
+    text-shadow: 2px 2px 20px cyan;
+}
+
+p.objective{
+    color: #fff;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    animation-name: objectiveAnimation;
+    animation-duration: 10s;
+}

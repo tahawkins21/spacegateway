@@ -1,0 +1,66 @@
+<!--Finalize the , html, css, component. decide on view design.-->
+<!--I'm reusing this code for the form. Probably means I should make another component and use it instead. Modularize!-->
+<div class="row h-4 w-100 m-0" id="satForm">
+    
+    <div class="col-sm-3 bg-light text-left">
+        <label for="date" class="mr-1">Begin Date: </label>
+        <input type="date" name="date" [(ngModel)]="beginDate">
+    </div>
+    <div class="col-sm-6 bg-light text-center">
+        <label for="lat" class="mr-1">Latitude</label>
+        <input list="lat" placeholder="-16.68537"  name="lat" [(ngModel)]="lat" min="-90" max="90">
+        <datalist id="lat">
+                <option value="40.757339">
+                <option value="40.948060">
+                <option value="-16.68537">
+        </datalist>
+
+
+        <label for="lon" class="mr-1">Longitude</label>
+        <input list="lon" placeholder="-62.85937" name="lon" [(ngModel)]="lon" min="-180" max="180"  >        
+        <datalist id="lon">
+                <option value="-73.985992">
+                <option value="-74.088290">
+                <option value="-62.85937">
+        </datalist>
+    </div>
+    <div class="col-sm-3 bg-light text-left">
+        <button id="satSubmit" class="btn" name="submit" (click)="getValidDates(lon, lat, beginDate)">Submit</button>
+    </div>
+    
+</div>
+
+<div class="row my-auto mr-0 ml-0 h-100 w-100">
+    <span style="height: 1em; font-size: .7em; color: white; margin-bottom: 0; text-align: center; width: 80%;margin-left: auto;margin-right: auto;">NASA's earth API changed after development of this segement
+        , limiting the functionality of this module. Future improvements are planned</span>
+        <div class="col-12 mx-auto">
+            <div id="carouselExampleControls" class="carousel mx-auto w-50"  data-interval="false">
+                    <div class="carousel-inner d-block" >
+                            <div class="card mb-3 carousel-item active" id="mainCard" style="height: 20em;">
+                                <div class="card-body">
+                                    <p class="card-text" id="satInstructions">{{loading}}</p>
+                                </div>
+                            </div>
+                            <!-- ngFor below previously let img of images (which contained array of satDatesModel
+                                Forced to change storing only one url string due to api change-->
+                            <div class="card mb-3 carousel-item" *ngFor="let str of pixelsUrl; index as i">
+                                <img  class="card-img-top" src="{{str}}" alt="Asset Image" style="height: 70%; width: 70%;">
+                                <div class="card-body" style="display: inline-block">
+                                    <p class="card-text"><small class="text-muted"><!--{{img.date}}--></small></p>
+                                    <p class="card-text"><small class="text-muted"><!--{{i+1}}--></small></p>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+            </div>
+            
+         </div>
+    </div>

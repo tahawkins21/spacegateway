@@ -1,0 +1,46 @@
+@media only screen and (max-width: 600px) {
+    #carouselExampleControls{
+        width: 100% !important;
+    }
+    #resultBody{
+        max-width: 100%;
+        display: block !important;
+    }
+    #carouselExampleControls img{
+        width: 100% !important;
+    }
+  }
+
+
+.hide{
+    display: none;
+}
+div.card-body{
+    text-align: center;
+   
+}
+.btn{
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    height: 90%;
+}
+#roverForm{
+    border: .5em solid black;
+}
+.card-body{
+    max-width: 30%;
+}
+#mainCard .card-body{
+    max-width: 100%;
+}
+#roverInfo{
+    width: 80%;
+    margin: 5% auto;
+    background-color: black;
+    color: white;
+}
+#roverInstructions{
+    width: 80%;
+    margin: 5% auto;
+}
